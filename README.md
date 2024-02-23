@@ -1,5 +1,5 @@
-# Your Project's Title...
-Your project's description...
+# ITW demo website
+Franklin demo for ITW 
 
 ## Environments
 - Preview: https://main--itw-franklin-demo--ensemblesystems.hlx.page/
