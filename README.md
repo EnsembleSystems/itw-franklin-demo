@@ -2,18 +2,14 @@
 Your project's description...
 
 ## Environments
-- Preview: https://main--{repo}--{owner}.hlx.page/
-- Live: https://main--{repo}--{owner}.hlx.live/
+- Preview: https://main--itw-franklin-demo--ensemblesystems.hlx.page/
+- Live: https://main--itw-franklin-demo--ensemblesystems.hlx.live/
 
 ## Installation
 
 ```sh
 npm i
 ```
-
-Update `.github/pull_request_template.md` with the correct repository name and owner name. Owner name most likely would be the organization (EnsembleSystems)
-
-Update this README.md "Environments" with the correct link to the environments.
 
 ## Linting
 
