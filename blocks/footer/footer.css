@@ -42,7 +42,7 @@
     padding-bottom: 2rem;
 }
 
-.section1 > .default-content-wrapper p {
+.section1 > .default-content-wrapper > p {
     margin-right: 1.3rem;
     margin-top: 2.2rem;
     overflow: hidden;
@@ -52,6 +52,10 @@
     font-weight: 300;
     font-family: HelveticaNeue, Helvetica, sans-serif;
     letter-spacing: .1px;
+}
+
+.section1 > .default-content-wrapper > p > a {
+    color: white;
 }
 
 .section2 {     
