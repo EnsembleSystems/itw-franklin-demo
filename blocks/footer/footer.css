@@ -39,7 +39,7 @@
 .section1 > .default-content-wrapper {
     display: flex;
     color: white;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
 }
 
 .section1 > .default-content-wrapper p {
@@ -58,6 +58,7 @@
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
     justify-self: end;
+    height: 40px;
 }
 
 .section2 > .default-content-wrapper {
@@ -84,9 +85,8 @@
     justify-self: end;
 }
 
-.section3 > .default-content-wrapper:first-child > p:first-child{
-    margin-bottom: 1.2rem;
-
+.section3 > .default-content-wrapper:first-child > p:last-child{
+    font-size: 10px;
 }
 
 .section3 > .default-content-wrapper {
