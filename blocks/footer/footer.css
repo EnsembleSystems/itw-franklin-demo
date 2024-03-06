@@ -26,7 +26,7 @@
 }
 
 .section0 > .default-content-wrapper {
-    margin-left: 3rem;
+    margin-left: 1.8rem;
     margin-top: 2.6rem;
 }
 
@@ -43,11 +43,11 @@
 }
 
 .section1 > .default-content-wrapper p {
-    margin-right: 3rem;
-    margin-top: 2.6rem;
+    margin-right: 1.3rem;
+    margin-top: 2.2rem;
     overflow: hidden;
     white-space: nowrap;
-    font-size: 12px;
+    font-size: 16px;
     line-height: 1.5;
     font-weight: 300;
     font-family: HelveticaNeue, Helvetica, sans-serif;
@@ -64,7 +64,7 @@
 .section2 > .default-content-wrapper {
     display: flex;
     color: white;
-    margin-right: 3rem;
+    margin-right: 1.3rem;
 }
 
 .section2 > .default-content-wrapper p {
@@ -72,7 +72,7 @@
 }
 
 .section2 > .default-content-wrapper p:not(:last-child) {
-    margin-right: 1.5rem;
+    margin-right: 1.3rem;
 }
 
 .section2 > .default-content-wrapper p:hover {
@@ -85,16 +85,24 @@
     justify-self: end;
 }
 
+.section3 > .default-content-wrapper{
+    font-size: 15px;
+}
+
+.section3 > .default-content-wrapper:first-child > p:first-child{
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
 .section3 > .default-content-wrapper:first-child > p:last-child{
-    font-size: 10px;
+    font-size: 13px;
 }
 
 .section3 > .default-content-wrapper {
-    margin-right: 3rem;
+    margin-right:1.3rem;
     color: white;
     font-size: 12px;
     line-height: 1.5rem;
-    font-weight: 300;
     font-family: HelveticaNeue, Helvetica, sans-serif;
     letter-spacing: .1px;
     text-align: right;
