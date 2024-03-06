@@ -107,3 +107,7 @@
     letter-spacing: .1px;
     text-align: right;
 }
+
+.section3 > .default-content-wrapper > p > a {
+    color: white;
+}
