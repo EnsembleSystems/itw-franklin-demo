@@ -1,0 +1,46 @@
+ul {
+    list-style-type: none;
+}
+
+.nav-links.block {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2.6rem;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 300;
+    font-family: HelveticaNeue, Helvetica, sans-serif;
+    letter-spacing: .1px;
+    z-index: 3;
+}
+
+.nav-links-row-1 > div {
+    margin-right: -3rem;
+}
+
+.nav-list {
+    color: white;
+    font-size: 16px;
+    position: relative;
+    z-index: 12;
+}
+
+.nav-list > li {
+    margin-bottom: 40px;
+}
+
+.nav-list-shown {
+    width: 100%;
+    background-color: white;
+}
+
+.nav-list-hidden {
+    visibility: hidden;
+}
+
+.nav-links-col > h3 {
+    cursor: pointer;
+    margin-bottom: 1.5rem; /* Please ensure this matches with footer spacing*/
+}
