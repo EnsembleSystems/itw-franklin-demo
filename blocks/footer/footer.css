@@ -1,1 +1,113 @@
-/* here goes footer styles */
+.footer-wrapper {
+    width: 100%;
+    height: calc(100% - 4.5rem);
+    top: 4.5rem;
+    left: 0;
+    background-color: #404040;
+    margin-top: 3rem;
+}
+
+.footer-section-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 45px 1fr;
+    max-width: 1180px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.section0 { 
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    justify-self: start;
+}
+
+.section0 > .default-content-wrapper {
+    margin-left: 1.8rem;
+    margin-top: 2.6rem;
+}
+
+.section1 { 
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    justify-self: end;
+}
+
+.section1 > .default-content-wrapper {
+    display: flex;
+    color: white;
+    padding-bottom: 2rem;
+}
+
+.section1 > .default-content-wrapper > p {
+    margin-right: 1.3rem;
+    margin-top: 2.2rem;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 300;
+    font-family: HelveticaNeue, Helvetica, sans-serif;
+    letter-spacing: .1px;
+}
+
+.section1 > .default-content-wrapper > p > a {
+    color: white;
+}
+
+.section2 {     
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    justify-self: end;
+    height: 40px;
+}
+
+.section2 > .default-content-wrapper {
+    display: flex;
+    color: white;
+    margin-right: 1.3rem;
+}
+
+.section2 > .default-content-wrapper p {
+    transition: transform .2s;
+}
+
+.section2 > .default-content-wrapper p:not(:last-child) {
+    margin-right: 1.3rem;
+}
+
+.section2 > .default-content-wrapper p:hover {
+    transform: scale(1.2);
+}
+
+.section3 {
+    grid-column: 2 / span 1;
+    grid-row: 3 / span 1;
+    justify-self: end;
+}
+
+.section3 > .default-content-wrapper:first-child > p:first-child{
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.section3 > .default-content-wrapper:first-child > p:last-child{
+    font-size: 13px;
+}
+
+.section3 > .default-content-wrapper {
+    margin-right:1.3rem;
+    color: white;
+    font-size: 15px;
+    line-height: 1.5rem;
+    font-family: HelveticaNeue, Helvetica, sans-serif;
+    letter-spacing: .1px;
+    text-align: right;
+}
+
+.section3 > .default-content-wrapper > p > a {
+    color: white;
+}
