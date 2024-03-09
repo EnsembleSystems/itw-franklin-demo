@@ -1,42 +1,60 @@
-import { getMetadata } from '../../scripts/aem.js';
-import { loadFragment } from '../fragment/fragment.js';
+import { getMetadata, decorateIcons } from '../../scripts/aem.js';
+
+function navOnClick() {
+  const list = this.parentNode.getElementsByTagName('ul');
+  const fullNavLists = this.parentNode.parentNode.parentNode.getElementsByTagName('ul');
+
+  for (let i = 0; i < fullNavLists.length; i += 1) {
+    fullNavLists[i].className = 'nav-list nav-list-hidden';
+  }
+
+  if (list.length > 0) {
+    list[0].className = 'nav-list nav-list-shown';
+  }
+}
 
 /**
  * decorates the header, mainly the nav
  * @param {Element} block The header block element
  */
 export default async function decorate(block) {
-  // load nav as fragment
   const navMeta = getMetadata('nav');
   const navPath = navMeta ? new URL(navMeta).pathname : '/nav';
-  const fragment = await loadFragment(navPath);
+  const resp = await fetch(`${navPath}.plain.html`);
 
-  // decorate nav DOM
-  const nav = document.createElement('nav');
-  nav.className = 'nav';
+  if (resp.ok) {
+    const html = await resp.text();
+    // decorate nav DOM
+    const nav = document.createElement('nav');
+    nav.className = 'nav';
+    nav.innerHTML = html;
 
-  let counter = 0;
-  while (fragment.firstElementChild) {
-    fragment.firstElementChild.className = `nav${counter}`;
-    counter += 1;
-    nav.append(fragment.firstElementChild);
+    [...nav.children].forEach((row, r) => {
+      row.className = `nav${r}`;
+    });
+
+    const navWrapper = document.createElement('div');
+    navWrapper.className = 'nav-wrapper';
+    decorateIcons(nav);
+    navWrapper.append(nav);
+    block.append(navWrapper);
+
+    const headingContainer = document.querySelector('.heading');
+    if (headingContainer) {
+      const childDivs = headingContainer.querySelectorAll(':scope > div');
+      childDivs.forEach((div, r) => {
+        div.classList.add('menu-row');
+        div.classList.add(`row-${r}`);
+        const ulElements = div.querySelectorAll('ul');
+        ulElements.forEach((ul) => {
+          ul.className = 'nav-list nav-list-hidden';
+        });
+
+        const toggleElements = div.querySelectorAll('h3');
+        toggleElements.forEach((elem) => {
+          elem.onclick = navOnClick;
+        });
+      });
+    }
   }
-
-  const navWrapper = document.createElement('div');
-  navWrapper.className = 'nav-wrapper';
-  navWrapper.append(nav);
-  block.append(navWrapper);
 }
-
-/*
-  Notes:
-  - Search bar and another icon when pressed are missing.
-
-  - Currently having difficulty setting the background of
-  the drop down menu to fill the entire width of the page
-  without causing further visual bugs to the nav list headers.
-
-  - Issue with the main section not recognizing header's space.
-  Use of 'A' characters are used to temporarily fill in space
-  for the picture used for testing.
-*/
