@@ -13,17 +13,16 @@ export default async function decorate(block) {
   const footerPath = footerMeta.footer || '/footer';
   const fragment = await loadFragment(footerPath);
 
-  // decorate footer DOM
-  const footer = document.createElement('div');
+  // add styling divs
+  const footerLight = document.createElement('div');
+  footerLight.className = 'footer-light';
 
   let counter = 0;
   while (fragment.firstElementChild) {
     fragment.firstElementChild.className = `section${counter}`;
     counter += 1;
-    footer.append(fragment.firstElementChild);
+    footerLight.append(fragment.firstElementChild);
   }
 
-  footer.className = 'footer-section-wrapper';
-
-  block.append(footer);
+  block.append(footerLight);
 }
