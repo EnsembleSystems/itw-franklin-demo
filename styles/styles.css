@@ -9,7 +9,7 @@
   --nav-height: 105px;
 
   /* font */
-  --heading-font-family: "HelveticaNeue", "Helvetica", "sans-serif";
+  --heading-font-family: 'HelveticaNeue', 'Helvetica', 'sans-serif';
 
   /* font sizes */
   --font-size-nav: 13px;
@@ -47,6 +47,7 @@ body.appear {
 
 header {
   height: var(--nav-height);
+  margin-bottom: 20px;
 }
 
 a:any-link {
