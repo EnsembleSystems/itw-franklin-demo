@@ -41,6 +41,37 @@ function navOnClick() {
   });
 }
 
+function toggleSearch() {
+  const searchbar = document.querySelector('#searchbar');
+  searchbar.classList.toggle('collapsed');
+}
+
+function createSearchBar() {
+  const searchBarHTML = `
+    <div id="searchbar" class="collapsed">
+      <div class="search-box">
+        <div class="panel-outer">
+          <div class="panel-inner">
+            <form action="/search" method="get">
+              <input type="text" placeholder="search" id="input">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+  const nav0 = document.querySelector('.nav0');
+  if (nav0) {
+    nav0.insertAdjacentHTML('beforeend', searchBarHTML);
+    nav0.onclick = toggleSearch;
+
+    const searchBar = document.querySelector('#searchbar');
+    searchBar.onclick = (e) => {
+      e.stopPropagation();
+    };
+  }
+}
+
 /**
  * decorates the header, mainly the nav
  * @param {Element} block The header block element
@@ -70,6 +101,7 @@ export default async function decorate(block) {
     navWrapper.append(nav);
     nav.append(overlay);
     block.append(navWrapper);
+    createSearchBar();
 
     const headingContainer = document.querySelector('.heading');
     if (headingContainer) {
