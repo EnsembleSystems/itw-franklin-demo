@@ -26,10 +26,9 @@ export default function decorate(block) {
       link.textContent = '';
       link.appendChild(span);
 
-      // Assign class based on the index
-      if (index === 0) { // First .button-container
+      if (index === 0) {
         link.classList.add('btn-inverse');
-      } else if (index === 1) { // Second .button-container
+      } else if (index === 1) {
         link.classList.add('btn-primary');
       }
     }
