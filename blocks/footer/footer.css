@@ -13,8 +13,8 @@
     grid-template-rows: 1fr 45px 1fr;
     max-width: 1180px;
     width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+    /* padding-right: 15px;
+    padding-left: 15px; */
     margin-right: auto;
     margin-left: auto;
 }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+	xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	viewBox="0 0 629 531" style="enable-background:new 0 0 629 531;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{clip-path:url(#SVGID_2_);}
+	.st2{fill:url(#Fill-1_1_);}
+	.st3{fill:url(#Fill-2_1_);}
+	.st4{fill:url(#Fill-3_1_);}
+	.st5{fill:url(#Fill-4_1_);}
+</style>
+<desc>Created with Lunacy</desc>
+<g id="_x34_-trail-lines" transform="matrix(-1 0 0 -1 628 530.5)">
+	<path id="Rectangle" class="st0" d="M-14.4,0h628v530h-628V0z"/>
+	<g>
+		<defs>
+			<rect id="SVGID_1_" x="-14.4" y="0" width="628" height="530"/>
+		</defs>
+		<clipPath id="SVGID_2_">
+			<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+		</clipPath>
+		<g class="st1">
+			
+				<linearGradient id="Fill-1_1_" gradientUnits="userSpaceOnUse" x1="411.6163" y1="165.142" x2="411.6163" y2="165.5299" gradientTransform="matrix(-227 0 0 697 93535.7031 -114946.5)">
+				<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+				<stop  offset="1" style="stop-color:#FFFFFF"/>
+			</linearGradient>
+			<path id="Fill-1" class="st2" d="M209.7-124L-14.7,573h2.6l224.4-697H209.7z"/>
+			
+				<linearGradient id="Fill-2_1_" gradientUnits="userSpaceOnUse" x1="411.6163" y1="165.142" x2="411.6163" y2="165.5299" gradientTransform="matrix(-227 0 0 697 93545.7031 -114946.5)">
+				<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+				<stop  offset="1" style="stop-color:#FFFFFF"/>
+			</linearGradient>
+			<path id="Fill-2" class="st3" d="M219.7-124L-4.7,573h2.6l224.4-697H219.7z"/>
+			
+				<linearGradient id="Fill-3_1_" gradientUnits="userSpaceOnUse" x1="411.6163" y1="165.142" x2="411.6163" y2="165.5299" gradientTransform="matrix(-227 0 0 697 93554.7031 -114946.5)">
+				<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+				<stop  offset="1" style="stop-color:#FFFFFF"/>
+			</linearGradient>
+			<path id="Fill-3" class="st4" d="M228.7-124L4.3,573h2.6l224.4-697H228.7z"/>
+			
+				<linearGradient id="Fill-4_1_" gradientUnits="userSpaceOnUse" x1="411.6163" y1="165.142" x2="411.6163" y2="165.5299" gradientTransform="matrix(-227 0 0 697 93564.7031 -114946.5)">
+				<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+				<stop  offset="1" style="stop-color:#FFFFFF"/>
+			</linearGradient>
+			<path id="Fill-4" class="st5" d="M238.7-124L14.3,573h2.6l224.4-697H238.7z"/>
+		</g>
+	</g>
+</g>
+</svg>
