@@ -1,0 +1,114 @@
+/* stylelint-disable media-feature-range-notation */
+@media (min-width: 1200px) {
+  .cards-small {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+
+  & img {
+    width: 540px;
+    height: 360px;
+  }
+
+  & .col-1,
+  .col-2 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  & .content-padding {
+    padding: 80px 60px;
+    padding-top: 60px;
+  }
+
+  & h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #006298;
+  }
+
+  & p {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    color: #303030;
+    padding-right: 10px;
+  }
+}
+
+.cards-small {
+  font-family: var(--font-family-sans-serif);
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.btn-container {
+  display: flex;
+  padding-left: 15px;
+}
+
+a.btn-primary {
+  margin-top: 30px;
+  border: none;
+  color: #8a1538;
+  outline: none;
+  background: linear-gradient(35deg, #cd2e4b 0%, #8a1538 100%);
+  overflow: hidden;
+  border-radius: 0;
+  padding: 12px 30px;
+  transform: skew(-17.7deg);
+  transform-origin: bottom left;
+
+  & span {
+    display: block;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    transform: skew(17.7deg);
+  }
+}
+
+a.btn-primary::before {
+  content: '';
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 0;
+  background-color: #fff;
+  opacity: 1;
+  outline: none;
+}
+
+a.btn-inverse {
+  margin-top: 30px;
+  border: none;
+  color: #fff;
+  outline: none;
+  background: linear-gradient(35deg, #cd2e4b 0%, #8a1538 100%);
+  overflow: hidden;
+  border-radius: 0;
+  padding: 12px 30px;
+  transform: skew(-17.7deg);
+  transform-origin: bottom left;
+
+  & span {
+    display: block;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    transform: skew(17.7deg);
+  }
+}
