@@ -40,13 +40,40 @@ export default function decorate(block) {
   const accordions = block.querySelectorAll('.accordion');
 
   accordions.forEach((accordion) => {
+    const button = document.createElement('button');
+    button.classList.add('accordion-btn');
+    button.textContent = '+';
+    accordion.insertBefore(button, accordion.firstChild);
+
     const divs = accordion.querySelectorAll('div');
     if (divs.length > 0) {
       divs[0].classList.add('primary');
     }
     if (divs.length > 1) {
-      divs[1].classList.add('secondary');
+      divs[1].classList.add('secondary', 'collapsed');
     }
+  });
+
+  const accordionBtns = block.querySelectorAll('.accordion-btn');
+  accordionBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const accordion = btn.closest('.accordion');
+      const divs = accordion.querySelectorAll('div.secondary');
+      accordion.classList.toggle('active');
+      if (accordion.classList.contains('active')) {
+        if (divs.length > 0) {
+          divs[0].classList.remove('collapsed');
+          divs[0].classList.add('active');
+        }
+        btn.textContent = '-';
+      } else {
+        if (divs.length > 0) {
+          divs[0].classList.remove('active');
+          divs[0].classList.add('collapsed');
+        }
+        btn.textContent = '+';
+      }
+    });
   });
 
   const accordionWrapper = document.createElement('div');
