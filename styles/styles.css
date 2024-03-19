@@ -45,10 +45,54 @@ ul, ol {
 
 body {
   margin: 0;
-  line-height: 1.6;
-  color: var(--text-color);
   background-color: var(--background-color);
   display: none;
+  color: #303030;
+  font-size: 1.5rem;
+  font-family: "HelveticaNeue", Helvetica, sans-serif;
+  font-weight: 300;
+  letter-spacing: .1px;
+  line-height: 1.2;
+  overflow-x: hidden;
+
+}
+
+@media (min-width: 768px) {
+  main > .section {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 576px) {
+  main > .section {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 992px) {
+  main > .section {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  main > .section {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+  main > .section {
+    max-width: 1180px;
+  }
+}
+
+main > .section {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 body.appear {
@@ -80,4 +124,70 @@ a.button:any-link, button {
 
 a.button:hover, a.button:focus, button:hover, button:focus  {
   cursor: pointer;
+}
+
+a.btn-primary {
+  margin-top: 30px;
+  border: none;
+  color: #8a1538;
+  outline: none;
+  background: linear-gradient(35deg, #cd2e4b 0%, #8a1538 100%);
+  overflow: hidden;
+  border-radius: 0;
+  padding: 12px 30px;
+  transform: skew(-17.7deg);
+  transform-origin: bottom left;
+
+  & span {
+    display: block;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    transform: skew(17.7deg);
+  }
+}
+
+a.btn-primary::before {
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 0;
+  background-color: #fff;
+  opacity: 1;
+  outline: none;
+}
+
+a.btn-inverse {
+  margin-top: 30px;
+  border: none;
+  color: #cd2e4b;
+  border: solid;
+  border-color: #cd2e4b;
+  outline: none;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 0;
+  padding: 12px 30px;
+  transform: skew(-17.7deg);
+  transform-origin: bottom left;
+
+  & span {
+    display: block;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    transform: skew(17.7deg);
+  }
+}
+
+a.btn-inverse:hover {
+  color: #fff;
+  background: linear-gradient(35deg, #cd2e4b 0%, #8a1538 100%);
+  text-decoration: none;
 }
