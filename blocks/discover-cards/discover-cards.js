@@ -6,9 +6,7 @@ export default async function decorate(block) {
   const grid = document.createElement('div');
   grid.classList = 'discover-cards-grid';
   [...block.children].forEach((row, i) => {
-    if (i === 0) {
-      console.log('HEADING');
-    } else if (i === 1) {
+    if (i === 1) {
       row.classList = 'main-card';
       const child = row.children[0];
       child.classList = 'main-card-content';
