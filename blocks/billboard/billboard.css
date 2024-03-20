@@ -1,0 +1,163 @@
+/* stylelint-disable media-feature-range-notation */
+
+@media (min-width: 1400px) {
+  .billboard-wrapper {
+    position: relative;
+  }
+}
+
+.billboard-wrapper {
+  margin-bottom: 30px;
+}
+
+.billboard {
+  position: relative;
+}
+
+.billboard-container img {
+  width: 100%;
+  height: 530px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.main-content-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.heading-container {
+  position: relative;
+}
+
+.heading-container > div {
+  position: absolute;
+  bottom: 250px;
+  padding-left: 50px;
+}
+
+.billboard-lines {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: calc(-20vw);
+  width: calc(40vw);
+  height: calc(100% + 1.5rem);
+  transform: skew(-17.7deg);
+  transform-origin: bottom left;
+  background: #8a1538;
+  background: linear-gradient(35deg, #cd2e4b 0%, #8a1538 100%);
+}
+
+.billboard-lines > img {
+  position: absolute;
+  transform: translateX(0) translateY(-100px) skew(17.7deg);
+  opacity: 0.5;
+  height: auto;
+  width: 600px;
+  right: -75px;
+}
+
+#discover-itw {
+  font-family: var(--font-family-sans-serif);
+  color: #fff;
+  font-size: 48px;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+
+#a-global-industrial-company-built-around-a-differentiated-business-model {
+  font-family: var(--font-family-sans-serif);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 200;
+  font-style: italic;
+  max-width: 400px;
+  line-height: 26px;
+}
+
+.accordion-wrapper {
+  position: absolute;
+}
+
+.accordion-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  bottom: 100px;
+}
+
+.accordion {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 369px;
+  height: 0;
+  min-height: 73px;
+  font-family: var(--font-family-sans-serif);
+  background-color: rgb(255 255 255 / 92%);
+  margin-right: 14px;
+  color: #303030;
+  border-bottom: 3px solid #8a1538;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 50%);
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  & .primary {
+    font-weight: 600;
+    padding: 25px;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  & .secondary {
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  & .collapsed {
+    opacity: 0;
+    padding: 14px 20px;
+  }
+
+  & .active {
+    display: block;
+    padding: 14px 20px;
+    padding-top: 0;
+    text-align: center;
+    max-height: 100px;
+    transition: all 0.2s ease;
+  }
+}
+
+.accordion.active {
+  height: auto;
+
+  & .primary {
+    color: #8a1538;
+  }
+
+  & .secondary {
+    color: #303030;
+    font-weight: 300;
+  }
+}
+
+.accordion-btn {
+  position: absolute;
+  top: -14px;
+  width: 30px;
+  height: 30px;
+  padding: 6px 0;
+  border-radius: 15px;
+  border-style: none;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 0;
+  color: #fff;
+  background: linear-gradient(to right, #cd2e4b, #8a1538);
+}
