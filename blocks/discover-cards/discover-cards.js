@@ -13,6 +13,8 @@ export default async function decorate(block) {
       child.children[0].classList = 'image';
       child.children[1].classList = 'title';
       grid.append(row);
+    } else if (i === 0) {
+      row.classList = 'heading-card';
     } else {
       row.classList = 'card-column';
       [...row.children].forEach((item) => {
@@ -33,6 +35,5 @@ export default async function decorate(block) {
       grid.append(row);
     }
   });
-
   block.append(grid);
 }
