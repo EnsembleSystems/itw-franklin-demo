@@ -39,4 +39,15 @@ export async function loadLazy(main) {
   blogContainer.append(quoteDiv, blog);
 
   main.append(blogContainer);
+
+  // Add "View All Stories" button
+  const buttonDiv = document.createElement('div');
+  buttonDiv.classList = 'button-container';
+  const button = document.createElement('a');
+  button.classList = 'btn-inverse';
+  button.href = 'https://www.itw.com/blog/';
+  button.textContent = 'VIEW ALL STORIES';
+  buttonDiv.append(button);
+
+  main.append(buttonDiv);
 }
