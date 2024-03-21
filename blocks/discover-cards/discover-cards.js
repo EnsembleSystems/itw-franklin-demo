@@ -14,7 +14,7 @@ export default async function decorate(block) {
       child.children[1].classList = 'title';
 
       const link = document.createElement('a');
-      link.href = `/Posts/${child.children[1].textContent.replaceAll(' ', '-').toLowerCase()}`;
+      link.href = `/posts/${child.children[1].textContent.replaceAll(' ', '-').toLowerCase()}`;
       link.append(child.children[0], child.children[1]);
       child.append(link);
 
