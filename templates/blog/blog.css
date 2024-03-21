@@ -18,11 +18,11 @@
 
 .blog-heading picture::after {
   content: '';
-  height: calc(63%);
+  height: 60%;
   width: 100vw;
   position: absolute;
   right: 80%;
-  top: 8rem;
+  top: 23%;
   z-index: -1;
   background-color: #f2f2f2;
   animation-name: slice-reverse;
