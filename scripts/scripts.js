@@ -12,9 +12,106 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
+  getMetadata,
+  toClassName,
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
+
+const TEMPLATE_LIST = ['blog'];
+
+/**
+ * @typedef Template
+ * @property {function} [loadLazy] If provided, will be called in the lazy phase. Expects a
+ *  single argument: the document's <main> HTMLElement.
+ * @property {function} [loadEager] If provided, will be called in the eager phase. Expects a single
+ *  argument: the document's <main> HTMLElement.
+ * @property {function} [loadDelayed] If provided, will be called in the delayed phase. Expects a
+ *  single argument: the document's <main> HTMLElement.
+ */
+
+/**
+ * @type {Template}
+ */
+let template;
+
+/**
+ * Invokes a template's eager method, if specified.
+ * @param {Template} [toLoad] Template whose eager method should be invoked.
+ * @param {HTMLElement} main The document's main element.
+ */
+async function loadEagerTemplate(toLoad, main) {
+  if (toLoad && toLoad.loadEager) {
+    await toLoad.loadEager(main);
+  }
+}
+
+/**
+ * Invokes a template's lazy method, if specified.
+ * @param {Template} [toLoad] Template whose lazy method should be invoked.
+ * @param {HTMLElement} main The document's main element.
+ */
+async function loadLazyTemplate(toLoad, main) {
+  if (toLoad) {
+    if (toLoad.loadLazy) {
+      await toLoad.loadLazy(main);
+    }
+  }
+}
+
+/**
+ * Invokes a template's delayed method, if specified.
+ * @param {Template} [toLoad] Template whose delayed method should be invoked.
+ * @param {HTMLElement} main The document's main element.
+ */
+async function loadDelayedTemplate(toLoad, main) {
+  if (toLoad && toLoad.loadDelayed) {
+    await toLoad.loadDelayed(main);
+  }
+}
+
+/**
+ * Loads a template by concurrently requesting its CSS and javascript files, and invoking its
+ * eager loading phase.
+ * @param {string} templateName The name of the template to load.
+ * @param {HTMLElement} main The document's main element.
+ * @returns {Promise<Template>} Resolves with the imported module after the template's files are
+ *  loaded and its eager phase is complete.
+ */
+async function loadTemplate(templateName, main) {
+  const cssLoaded = loadCSS(
+    `${window.hlx.codeBasePath}/templates/${templateName}/${templateName}.css`,
+  );
+  let module;
+  const decorateComplete = new Promise((resolve) => {
+    (async () => {
+      module = await import(
+        `../templates/${templateName}/${templateName}.js`
+      );
+      await loadEagerTemplate(module, main);
+      resolve();
+    })();
+  });
+  await Promise.all([cssLoaded, decorateComplete]);
+  return module;
+}
+
+/**
+ * Run template specific decoration code.
+ * @param {Element} main The container element
+ */
+async function decorateTemplates(main) {
+  try {
+    const templateName = toClassName(getMetadata('template'));
+    const templates = TEMPLATE_LIST;
+    if (templates.includes(templateName)) {
+      template = await loadTemplate(templateName, main);
+    }
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('template loading failed', error);
+  }
+}
 
 /**
  * load fonts.css and set a session storage flag
@@ -67,6 +164,7 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+    await decorateTemplates(main);
     document.body.classList.add('appear');
     await waitForLCP(LCP_BLOCKS);
   }
@@ -88,6 +186,7 @@ async function loadEager(doc) {
 async function loadLazy(doc) {
   const main = doc.querySelector('main');
   await loadBlocks(main);
+  await loadLazyTemplate(template, main);
 
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
@@ -110,7 +209,11 @@ async function loadLazy(doc) {
  */
 function loadDelayed() {
   // eslint-disable-next-line import/no-cycle
-  window.setTimeout(() => import('./delayed.js'), 3000);
+  window.setTimeout(async () => {
+    const main = document.querySelector('main');
+    await loadDelayedTemplate(template, main);
+    import('./delayed.js');
+  }, 3000);
   // load anything that can be postponed to the latest here
 }
 
