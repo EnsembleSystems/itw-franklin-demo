@@ -12,6 +12,12 @@ export default async function decorate(block) {
       child.classList = 'main-card-content';
       child.children[0].classList = 'image';
       child.children[1].classList = 'title';
+
+      const link = document.createElement('a');
+      link.href = `/Posts/${child.children[1].textContent.replaceAll(' ', '-').toLowerCase()}`;
+      link.append(child.children[0], child.children[1]);
+      child.append(link);
+
       grid.append(row);
     } else if (i === 0) {
       row.classList = 'heading-card';
@@ -29,6 +35,11 @@ export default async function decorate(block) {
           item.classList = 'card';
           item.children[0].classList = 'image';
           item.children[1].classList = 'title';
+
+          const link = document.createElement('a');
+          link.href = `/Posts/${item.children[1].textContent.replaceAll(' ', '-').toLowerCase()}`;
+          link.append(item.children[0], item.children[1]);
+          item.append(link);
         }
         row.append(item);
       });

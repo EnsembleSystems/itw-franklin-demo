@@ -1,3 +1,9 @@
+.discover-cards-wrapper {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: rgba(48, 48, 48, .15);
+}
+
 .discover-cards h2 {
   font-size: 1.2rem;
   font-weight: 500;
