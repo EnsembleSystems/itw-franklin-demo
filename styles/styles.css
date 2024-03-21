@@ -155,49 +155,17 @@ button:focus {
   cursor: pointer;
 }
 
-a.btn-primary {
-  margin-top: 30px;
-  border: none;
-  color: #8a1538;
-  outline: none;
-  background: linear-gradient(35deg, #cd2e4b 0%, #8a1538 100%);
-  overflow: hidden;
-  border-radius: 0;
-  padding: 12px 30px;
-  transform: skew(-17.7deg);
-  transform-origin: bottom left;
-
-  & span {
-    display: block;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 18px;
-    text-align: center;
-    text-transform: uppercase;
-    transform: skew(17.7deg);
-  }
-}
-
-a.btn-primary::before {
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  z-index: 0;
-  background-color: #fff;
-  opacity: 1;
-  outline: none;
+.btn-container {
+  display: flex;
+  padding-left: 15px;
 }
 
 a.btn-inverse {
   margin-top: 30px;
   border: none;
-  color: #cd2e4b;
-  border: solid;
-  border-color: #cd2e4b;
+  color: #fff;
   outline: none;
-  background: #fff;
+  background: linear-gradient(35deg, #cd2e4b 0%, #8a1538 100%);
   overflow: hidden;
   border-radius: 0;
   padding: 12px 30px;
@@ -216,7 +184,57 @@ a.btn-inverse {
 }
 
 a.btn-inverse:hover {
-  color: #fff;
-  background: linear-gradient(35deg, #cd2e4b 0%, #8a1538 100%);
   text-decoration: none;
+}
+
+a.btn-primary {
+  margin-top: 30px;
+  border: none;
+  color: #8a1538;
+  outline: none;
+  background: linear-gradient(35deg, #cd2e4b 0%, #8a1538 100%);
+  overflow: hidden;
+  border-radius: 0;
+  padding: 12px 30px;
+  transform: skew(-17.7deg);
+  transform-origin: bottom left;
+  position: relative;
+  display: inline-block;
+
+  & span {
+    display: block;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    transform: skew(17.7deg);
+  }
+}
+
+a.btn-primary::before {
+  content: '';
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  z-index: 0;
+  background-color: #fff;
+  opacity: 1;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+a.btn-primary:hover::before {
+  background: linear-gradient(35deg, #cd2e4b 0%, #8a1538 100%);
+}
+
+a.btn-primary:hover {
+  color: #fff;
+  text-decoration: none;
+
+  & span {
+    color: inherit;
+  }
 }
