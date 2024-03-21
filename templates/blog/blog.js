@@ -46,7 +46,9 @@ export async function loadLazy(main) {
   const button = document.createElement('a');
   button.classList = 'btn-inverse';
   button.href = 'https://www.itw.com/blog/';
-  button.textContent = 'VIEW ALL STORIES';
+  const buttonText = document.createElement('span');
+  buttonText.textContent = 'VIEW ALL STORIES';
+  button.append(buttonText);
   buttonDiv.append(button);
 
   main.append(buttonDiv);
