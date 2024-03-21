@@ -23,7 +23,7 @@ export default async function decorate(block) {
           item.innerHTML = `<p class="quote">${item.innerHTML}</p>`;
         } else if (item.children.length === 1) {
           item.classList = 'button-card';
-          item.children[0].classList = 'btn-inverse';
+          item.children[0].classList = 'btn-primary';
           item.children[0].innerHTML = `<span>${item.children[0].textContent}</span>`;
         } else if (item.children.length === 2) {
           item.classList = 'card';
