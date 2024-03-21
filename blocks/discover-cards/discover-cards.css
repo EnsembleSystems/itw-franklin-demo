@@ -78,14 +78,6 @@
   align-items: center;
 }
 
-.button-card a {
-  display: block;
-  height: 5%;
-  width: 45%;
-  font-size: 0.8rem;
-  text-align: center;
-}
-
 .card {
   flex-grow: 1;
   flex-shrink: 0;
