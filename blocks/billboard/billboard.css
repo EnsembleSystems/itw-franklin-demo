@@ -1,3 +1,4 @@
+/* stylelint-disable selector-id-pattern */
 /* stylelint-disable media-feature-range-notation */
 
 @media (min-width: 1400px) {
@@ -162,4 +163,12 @@
   line-height: 0;
   color: #fff;
   background: linear-gradient(to right, #cd2e4b, #8a1538);
+}
+
+.billboard-image-wrapper {
+  background-color: #303030;
+}
+
+#bannerCarousel img {
+  transition: opacity 1s ease-in-out;
 }
