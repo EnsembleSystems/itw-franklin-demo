@@ -1,7 +1,68 @@
+/* eslint-disable max-len */
 export default function decorate(block) {
   const billboard = document.querySelector('div.billboard.block');
   const billBoardContainer = block.querySelector('.billboard > div');
   billBoardContainer.classList.add('billboard-container');
+
+  function createCarousel(images) {
+    const carousel = document.getElementById('bannerCarousel');
+    if (!images.length) return;
+    carousel.innerHTML = `<img loading="eager" alt="Banner Image" src="${images[0].src}" width="1440" height="564">`;
+
+    images.forEach((image) => {
+      const img = new Image();
+      img.src = image.src;
+    });
+
+    let currentIndex = 0;
+    const imgElement = carousel.querySelector('img');
+
+    function cycleImages() {
+      imgElement.style.opacity = 0;
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+        imgElement.src = images[currentIndex].src;
+
+        imgElement.onload = () => {
+          imgElement.style.opacity = 1;
+        };
+      }, 1000);
+    }
+
+    setInterval(cycleImages, 5000);
+  }
+
+  const imageWrapper = block.querySelector(
+    '.billboard-container > div:nth-child(1)',
+  );
+  imageWrapper.innerHTML = `<div class="billboard-image-wrapper" id="bannerCarousel">
+    <img loading="eager" alt="Banner Image" src="" width="1440" height="564">
+</div>`;
+
+  const images = [
+    {
+      src: 'https://main--itw-franklin-demo--ensemblesystems.hlx.page/media/header-image1.jpg',
+      type: 'image',
+    },
+    {
+      src: 'https://main--itw-franklin-demo--ensemblesystems.hlx.page/media/header-image2.jpg',
+      type: 'image',
+    },
+    {
+      src: 'https://main--itw-franklin-demo--ensemblesystems.hlx.page/media/header-image3.jpg',
+      type: 'image',
+    },
+    {
+      src: 'https://main--itw-franklin-demo--ensemblesystems.hlx.page/media/header-image4.jpg',
+      type: 'image',
+    },
+    {
+      src: 'https://main--itw-franklin-demo--ensemblesystems.hlx.page/media/header-image5.jpg',
+      type: 'image',
+    },
+  ];
+
+  createCarousel(images);
 
   const mainContentContainer = document.createElement('div');
   mainContentContainer.classList.add('main-content-container');
@@ -16,18 +77,26 @@ export default function decorate(block) {
   billboard.appendChild(mainContentContainer);
   billboard.appendChild(accordionContainer);
 
-  const heading = block.querySelector('body > main > div > div > div > div:nth-child(2)');
+  const heading = block.querySelector(
+    'body > main > div > div > div > div:nth-child(2)',
+  );
   heading.classList.add('heading-container');
 
-  const accordionOne = block.querySelector('body > main > div > div > div > div:nth-child(3)');
+  const accordionOne = block.querySelector(
+    'body > main > div > div > div > div:nth-child(3)',
+  );
   accordionOne.classList.add('accordion');
   accordionOne.classList.add('1');
 
-  const accordionTwo = block.querySelector('body > main > div > div > div > div:nth-child(4)');
+  const accordionTwo = block.querySelector(
+    'body > main > div > div > div > div:nth-child(4)',
+  );
   accordionTwo.classList.add('accordion');
   accordionTwo.classList.add('2');
 
-  const accordionThree = block.querySelector('body > main > div > div > div > div:nth-child(5)');
+  const accordionThree = block.querySelector(
+    'body > main > div > div > div > div:nth-child(5)',
+  );
   accordionThree.classList.add('accordion');
   accordionThree.classList.add('3');
 
