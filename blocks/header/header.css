@@ -43,7 +43,8 @@
 }
 
 .heading {
-  margin-top: 2.6rem;
+  margin-top: 1.8rem;
+  /* margin-top: 2.6rem; */
   overflow: hidden;
   line-height: 1.5;
 }
@@ -70,7 +71,7 @@
   transition: transform 0.2s ease-in-out;
   position: absolute;
   left: 50%;
-  bottom: 0;
+  bottom: 7.5px;
   transform: translateX(-50%) scaleX(0);
 }
 
@@ -233,14 +234,15 @@
   grid-row: 2 / span 1;
   justify-self: start;
   margin-left: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  /* margin-top: 2rem; */
 }
 
 .nav2 {
   grid-column: 2 / span 1;
   grid-row: 2 / span 1;
   justify-self: end;
-  margin-right: 2rem;
+  margin-right: 2.5rem;
 }
 
 .row-1 > div {
@@ -250,13 +252,14 @@
 .overlay {
   display: none;
   position: absolute;
-  top: 125px;
+  top: 105px;
   left: 0;
   width: 100vw;
   height: 420px;
   background-color: #fff;
   opacity: 0.89;
   z-index: 10;
+  border-top: .5px solid #303030;
 }
 
 .overlay.active {
