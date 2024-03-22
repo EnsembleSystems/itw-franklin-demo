@@ -365,7 +365,12 @@ function decorateButtons(element) {
     if (a.href !== a.textContent) {
       const up = a.parentElement;
       const twoup = a.parentElement.parentElement;
+      const main = document.querySelector('main');
       if (!a.querySelector('img')) {
+        const span = document.createElement('span');
+        span.textContent = a.textContent;
+        a.textContent = '';
+        a.appendChild(span);
         if (up.childNodes.length === 1 && (up.tagName === 'P' || up.tagName === 'DIV')) {
           a.className = 'button'; // default
           up.classList.add('button-container');
@@ -388,6 +393,9 @@ function decorateButtons(element) {
           a.className = 'button secondary';
           twoup.classList.add('button-container');
         }
+      }
+      if (main.contains(a) && !a.classList.contains('btn-inverse')) {
+        a.classList.add('btn-primary');
       }
     }
   });

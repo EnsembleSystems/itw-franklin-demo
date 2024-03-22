@@ -3,6 +3,9 @@ export default function decorate(block) {
   const billBoardContainer = block.querySelector('.billboard > div');
   billBoardContainer.classList.add('billboard-container');
 
+  const imageWrapper = block.querySelector('.billboard-container > div:nth-child(1)');
+  imageWrapper.classList.add('billboard-image-wrapper');
+
   const mainContentContainer = document.createElement('div');
   mainContentContainer.classList.add('main-content-container');
   const accordionContainer = document.createElement('div');

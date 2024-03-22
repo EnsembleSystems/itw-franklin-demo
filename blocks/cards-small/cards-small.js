@@ -28,6 +28,7 @@ export default function decorate(block) {
 
       if (index === 0) {
         link.classList.add('btn-inverse');
+        link.classList.remove('btn-primary');
       } else if (index === 1) {
         link.classList.add('btn-primary');
       }

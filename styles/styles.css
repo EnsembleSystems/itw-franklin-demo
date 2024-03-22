@@ -119,6 +119,13 @@ header {
 
 .default-content-wrapper {
   padding-top: 60px;
+
+  & .button-container {
+    display: block;
+    max-width: 162px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 a:any-link {
@@ -174,7 +181,7 @@ a.btn-inverse {
 
   & span {
     display: block;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 12px;
     line-height: 18px;
     text-align: center;
@@ -203,7 +210,7 @@ a.btn-primary {
 
   & span {
     display: block;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 12px;
     line-height: 18px;
     text-align: center;
